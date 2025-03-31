@@ -13,8 +13,13 @@
 ## 🚀 การใช้งาน
 
 ```bash
-git clone https://github.com/yourusername/aqi-pipeline.git
-cd aqi-pipeline
+1. Clone โปรเจกต์จาก GitHub
+git clone https://github.com/bhoomsiri/AQIpipeline.git
+cd AQIpipeline
 
-cp .env.example .env  # แล้วใส่ API_KEY ของคุณ
-docker-compose up
+2. ติดตั้ง dependency ที่จำเป็น (เช่น streamlit, psycopg2, pandas)
+pip install -r requirements.txt
+
+3. รัน Dashboard
+streamlit run dashboard.py --server.address=0.0.0.0 --server.port=8501
+
