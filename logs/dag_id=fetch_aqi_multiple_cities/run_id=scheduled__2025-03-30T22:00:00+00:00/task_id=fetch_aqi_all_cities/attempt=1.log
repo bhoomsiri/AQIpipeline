@@ -1,0 +1,51 @@
+[2025-03-30T23:03:08.702+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-30T22:00:00+00:00 [queued]>
+[2025-03-30T23:03:08.704+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-30T22:00:00+00:00 [queued]>
+[2025-03-30T23:03:08.704+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-30T23:03:08.708+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_aqi_all_cities> on 2025-03-30 22:00:00+00:00
+[2025-03-30T23:03:08.710+0000] {standard_task_runner.py:60} INFO - Started process 36975 to run task
+[2025-03-30T23:03:08.712+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_aqi_multiple_cities', 'fetch_aqi_all_cities', 'scheduled__2025-03-30T22:00:00+00:00', '--job-id', '141', '--raw', '--subdir', 'DAGS_FOLDER/fetch_multiple_cities.py', '--cfg-path', '/tmp/tmpek4ov72u']
+[2025-03-30T23:03:08.712+0000] {standard_task_runner.py:88} INFO - Job 141: Subtask fetch_aqi_all_cities
+[2025-03-30T23:03:08.718+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-30T23:03:08.729+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-30T22:00:00+00:00 [running]> on host f5300fe43025
+[2025-03-30T23:03:08.753+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_aqi_multiple_cities' AIRFLOW_CTX_TASK_ID='fetch_aqi_all_cities' AIRFLOW_CTX_EXECUTION_DATE='2025-03-30T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-30T22:00:00+00:00'
+[2025-03-30T23:03:09.008+0000] {fetch_multiple_cities.py:51} INFO - ✅ Bangkok: AQI = 91
+[2025-03-30T23:03:09.017+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-30T23:03:09.020+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Bangkok', 91, datetime.datetime(2025, 3, 31, 6, 3, 8, 754147, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-30T23:03:09.021+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-30T23:03:24.368+0000] {fetch_multiple_cities.py:51} INFO - ✅ Chiang Mai: AQI = 164
+[2025-03-30T23:03:24.378+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-30T23:03:24.382+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Chiang Mai', 164, datetime.datetime(2025, 3, 31, 6, 3, 8, 754147, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-30T23:03:24.383+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-30T23:21:58.205+0000] {fetch_multiple_cities.py:51} INFO - ✅ Ratchaburi: AQI = 52
+[2025-03-30T23:21:58.215+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-30T23:21:58.219+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Ratchaburi', 52, datetime.datetime(2025, 3, 31, 6, 3, 8, 754147, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-30T23:21:58.220+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-30T23:22:02.438+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2025-03-30T23:22:02.439+0000] {process_utils.py:131} INFO - Sending 15 to group 36975. PIDs of all processes in the group: [36975]
+[2025-03-30T23:22:02.440+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 36975
+[2025-03-30T23:22:02.440+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-03-30T23:22:02.445+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fetch_multiple_cities.py", line 65, in fetch_and_insert_multiple
+    time.sleep(15)  # 2 วินาทีต่อเมือง (ปรับได้)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-03-30T23:22:02.447+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fetch_aqi_multiple_cities, task_id=fetch_aqi_all_cities, execution_date=20250330T220000, start_date=20250330T230308, end_date=20250330T232202
+[2025-03-30T23:22:02.452+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 141 for task fetch_aqi_all_cities (Task received SIGTERM signal; 36975)
+[2025-03-30T23:22:02.458+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=36975, status='terminated', exitcode=1, started='23:03:08') (36975) terminated with exit code 1

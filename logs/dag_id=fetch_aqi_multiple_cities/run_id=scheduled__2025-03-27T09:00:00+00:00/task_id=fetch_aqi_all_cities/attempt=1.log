@@ -1,0 +1,37 @@
+[2025-03-27T10:27:56.800+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-27T09:00:00+00:00 [queued]>
+[2025-03-27T10:27:56.809+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-27T09:00:00+00:00 [queued]>
+[2025-03-27T10:27:56.810+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-27T10:27:56.822+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_aqi_all_cities> on 2025-03-27 09:00:00+00:00
+[2025-03-27T10:27:56.824+0000] {standard_task_runner.py:60} INFO - Started process 1881 to run task
+[2025-03-27T10:27:56.827+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_aqi_multiple_cities', 'fetch_aqi_all_cities', 'scheduled__2025-03-27T09:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/fetch_multiple_cities.py', '--cfg-path', '/tmp/tmp8j58t8la']
+[2025-03-27T10:27:56.828+0000] {standard_task_runner.py:88} INFO - Job 27: Subtask fetch_aqi_all_cities
+[2025-03-27T10:27:56.839+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-27T10:27:56.862+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-27T09:00:00+00:00 [running]> on host 79a5714298e2
+[2025-03-27T10:27:56.905+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_aqi_multiple_cities' AIRFLOW_CTX_TASK_ID='fetch_aqi_all_cities' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-27T09:00:00+00:00'
+[2025-03-27T10:27:57.200+0000] {fetch_multiple_cities.py:50} INFO - ✅ Bangkok: AQI = 117
+[2025-03-27T10:27:57.205+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-27T10:27:57.207+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Bangkok', 117, datetime.datetime(2025, 3, 27, 10, 27, 56, 906772))
+[2025-03-27T10:27:57.208+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-27T10:27:57.532+0000] {fetch_multiple_cities.py:50} INFO - ✅ Chiang Mai: AQI = 139
+[2025-03-27T10:27:57.535+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-27T10:27:57.537+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Chiang Mai', 139, datetime.datetime(2025, 3, 27, 10, 27, 56, 906772))
+[2025-03-27T10:27:57.537+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-27T10:27:57.757+0000] {fetch_multiple_cities.py:50} INFO - ✅ Ratchaburi: AQI = 66
+[2025-03-27T10:27:57.762+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-27T10:27:57.764+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Ratchaburi', 66, datetime.datetime(2025, 3, 27, 10, 27, 56, 906772))
+[2025-03-27T10:27:57.764+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-27T10:27:57.985+0000] {fetch_multiple_cities.py:59} WARNING - ❌ API error for Rua Yai: 429
+[2025-03-27T10:27:58.220+0000] {fetch_multiple_cities.py:59} WARNING - ❌ API error for Mueang Nonthaburi: 429
+[2025-03-27T10:27:58.221+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-03-27T10:27:58.234+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=fetch_aqi_multiple_cities, task_id=fetch_aqi_all_cities, execution_date=20250327T090000, start_date=20250327T102756, end_date=20250327T102758
+[2025-03-27T10:27:58.270+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-03-27T10:27:58.283+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

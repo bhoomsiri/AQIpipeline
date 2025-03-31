@@ -1,0 +1,49 @@
+[2025-03-29T00:10:07.682+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-28T23:00:00+00:00 [queued]>
+[2025-03-29T00:10:07.689+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-28T23:00:00+00:00 [queued]>
+[2025-03-29T00:10:07.690+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-29T00:10:07.696+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_aqi_all_cities> on 2025-03-28 23:00:00+00:00
+[2025-03-29T00:10:07.700+0000] {standard_task_runner.py:60} INFO - Started process 13390 to run task
+[2025-03-29T00:10:07.702+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_aqi_multiple_cities', 'fetch_aqi_all_cities', 'scheduled__2025-03-28T23:00:00+00:00', '--job-id', '90', '--raw', '--subdir', 'DAGS_FOLDER/fetch_multiple_cities.py', '--cfg-path', '/tmp/tmpetfmtosp']
+[2025-03-29T00:10:07.703+0000] {standard_task_runner.py:88} INFO - Job 90: Subtask fetch_aqi_all_cities
+[2025-03-29T00:10:07.713+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-29T00:10:07.731+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities scheduled__2025-03-28T23:00:00+00:00 [running]> on host f5300fe43025
+[2025-03-29T00:10:07.796+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_aqi_multiple_cities' AIRFLOW_CTX_TASK_ID='fetch_aqi_all_cities' AIRFLOW_CTX_EXECUTION_DATE='2025-03-28T23:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-28T23:00:00+00:00'
+[2025-03-29T00:10:08.271+0000] {fetch_multiple_cities.py:51} INFO - ✅ Bangkok: AQI = 119
+[2025-03-29T00:10:08.276+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-29T00:10:08.278+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Bangkok', 119, datetime.datetime(2025, 3, 29, 7, 10, 7, 798963, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-29T00:10:08.279+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-29T00:10:23.514+0000] {fetch_multiple_cities.py:51} INFO - ✅ Chiang Mai: AQI = 174
+[2025-03-29T00:10:23.523+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-29T00:10:23.526+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Chiang Mai', 174, datetime.datetime(2025, 3, 29, 7, 10, 7, 798963, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-29T00:10:23.527+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-29T00:10:38.772+0000] {fetch_multiple_cities.py:51} INFO - ✅ Ratchaburi: AQI = 114
+[2025-03-29T00:10:38.783+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-29T00:10:38.787+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Ratchaburi', 114, datetime.datetime(2025, 3, 29, 7, 10, 7, 798963, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-29T00:10:38.788+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-29T00:10:54.039+0000] {fetch_multiple_cities.py:51} INFO - ✅ Rua Yai: AQI = 103
+[2025-03-29T00:10:54.045+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-29T00:10:54.048+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Rua Yai', 103, datetime.datetime(2025, 3, 29, 7, 10, 7, 798963, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-29T00:10:54.049+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-29T00:11:09.287+0000] {fetch_multiple_cities.py:51} INFO - ✅ Mueang Nonthaburi: AQI = 117
+[2025-03-29T00:11:09.297+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-29T00:11:09.301+0000] {sql.py:450} INFO - Running statement: 
+                        INSERT INTO air_quality_data (city, aqi, timestamp_utc)
+                        VALUES (%s, %s, %s);
+                    , parameters: ('Mueang Nonthaburi', 117, datetime.datetime(2025, 3, 29, 7, 10, 7, 798963, tzinfo=<DstTzInfo 'Asia/Bangkok' +07+7:00:00 STD>))
+[2025-03-29T00:11:09.303+0000] {sql.py:459} INFO - Rows affected: 1
+[2025-03-29T00:11:24.325+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-03-29T00:11:24.338+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=fetch_aqi_multiple_cities, task_id=fetch_aqi_all_cities, execution_date=20250328T230000, start_date=20250329T001007, end_date=20250329T001124
+[2025-03-29T00:11:24.371+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-03-29T00:11:24.382+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

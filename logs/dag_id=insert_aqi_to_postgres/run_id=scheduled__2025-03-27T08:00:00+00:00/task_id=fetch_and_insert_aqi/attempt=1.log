@@ -1,0 +1,82 @@
+[2025-03-27T09:01:56.347+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: insert_aqi_to_postgres.fetch_and_insert_aqi scheduled__2025-03-27T08:00:00+00:00 [queued]>
+[2025-03-27T09:01:56.351+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: insert_aqi_to_postgres.fetch_and_insert_aqi scheduled__2025-03-27T08:00:00+00:00 [queued]>
+[2025-03-27T09:01:56.352+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-27T09:01:56.358+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_and_insert_aqi> on 2025-03-27 08:00:00+00:00
+[2025-03-27T09:01:56.362+0000] {standard_task_runner.py:60} INFO - Started process 1833 to run task
+[2025-03-27T09:01:56.366+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'insert_aqi_to_postgres', 'fetch_and_insert_aqi', 'scheduled__2025-03-27T08:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/insert_aqi_to_db.py', '--cfg-path', '/tmp/tmpqa70qymr']
+[2025-03-27T09:01:56.368+0000] {standard_task_runner.py:88} INFO - Job 23: Subtask fetch_and_insert_aqi
+[2025-03-27T09:01:56.379+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-27T09:01:56.402+0000] {task_command.py:423} INFO - Running <TaskInstance: insert_aqi_to_postgres.fetch_and_insert_aqi scheduled__2025-03-27T08:00:00+00:00 [running]> on host 79a5714298e2
+[2025-03-27T09:01:56.453+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='insert_aqi_to_postgres' AIRFLOW_CTX_TASK_ID='fetch_and_insert_aqi' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-27T08:00:00+00:00'
+[2025-03-27T09:01:56.458+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/local/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0xffff7b1da6d0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.airvisual.com', port=80): Max retries exceeded with url: /v2/city?city=Bangkok&state=Bangkok&country=Thailand&key=4fb76e79-4433-4b76-9866-f8fdf19a9d33 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff7b1da6d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/insert_aqi_to_db.py", line 31, in fetch_and_insert
+    response = requests.get(url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.airvisual.com', port=80): Max retries exceeded with url: /v2/city?city=Bangkok&state=Bangkok&country=Thailand&key=4fb76e79-4433-4b76-9866-f8fdf19a9d33 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff7b1da6d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+[2025-03-27T09:01:56.464+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=insert_aqi_to_postgres, task_id=fetch_and_insert_aqi, execution_date=20250327T080000, start_date=20250327T090156, end_date=20250327T090156
+[2025-03-27T09:01:56.471+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 23 for task fetch_and_insert_aqi (HTTPConnectionPool(host='api.airvisual.com', port=80): Max retries exceeded with url: /v2/city?city=Bangkok&state=Bangkok&country=Thailand&key=4fb76e79-4433-4b76-9866-f8fdf19a9d33 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff7b1da6d0>: Failed to establish a new connection: [Errno -2] Name or service not known')); 1833)
+[2025-03-27T09:01:56.504+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-03-27T09:01:56.513+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,16 @@
+[2025-03-30T00:08:55.057+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: validate_aqi_data.validate_and_clean scheduled__2025-03-29T00:00:00+00:00 [queued]>
+[2025-03-30T00:08:55.061+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: validate_aqi_data.validate_and_clean scheduled__2025-03-29T00:00:00+00:00 [queued]>
+[2025-03-30T00:08:55.062+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-30T00:08:55.068+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): validate_and_clean> on 2025-03-29 00:00:00+00:00
+[2025-03-30T00:08:55.069+0000] {standard_task_runner.py:60} INFO - Started process 26478 to run task
+[2025-03-30T00:08:55.071+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'validate_aqi_data', 'validate_and_clean', 'scheduled__2025-03-29T00:00:00+00:00', '--job-id', '117', '--raw', '--subdir', 'DAGS_FOLDER/validate_aqi_data.py', '--cfg-path', '/tmp/tmp261j00s6']
+[2025-03-30T00:08:55.072+0000] {standard_task_runner.py:88} INFO - Job 117: Subtask validate_and_clean
+[2025-03-30T00:08:55.078+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-30T00:08:55.090+0000] {task_command.py:423} INFO - Running <TaskInstance: validate_aqi_data.validate_and_clean scheduled__2025-03-29T00:00:00+00:00 [running]> on host f5300fe43025
+[2025-03-30T00:08:55.118+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='validate_aqi_data' AIRFLOW_CTX_TASK_ID='validate_and_clean' AIRFLOW_CTX_EXECUTION_DATE='2025-03-29T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-29T00:00:00+00:00'
+[2025-03-30T00:08:55.122+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-30T00:08:55.123+0000] {validate_aqi_data.py:62} INFO - ✅ Data validation ผ่านทั้งหมด และข้อมูลซ้ำถูกลบเรียบร้อยแล้ว
+[2025-03-30T00:08:55.124+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-03-30T00:08:55.126+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=validate_aqi_data, task_id=validate_and_clean, execution_date=20250329T000000, start_date=20250330T000855, end_date=20250330T000855
+[2025-03-30T00:08:55.168+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-03-30T00:08:55.179+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

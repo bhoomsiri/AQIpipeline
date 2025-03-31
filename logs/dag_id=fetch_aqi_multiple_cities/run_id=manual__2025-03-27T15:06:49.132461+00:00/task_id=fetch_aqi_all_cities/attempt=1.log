@@ -1,0 +1,19 @@
+[2025-03-27T15:06:50.013+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities manual__2025-03-27T15:06:49.132461+00:00 [queued]>
+[2025-03-27T15:06:50.016+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities manual__2025-03-27T15:06:49.132461+00:00 [queued]>
+[2025-03-27T15:06:50.016+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-27T15:06:50.022+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_aqi_all_cities> on 2025-03-27 15:06:49.132461+00:00
+[2025-03-27T15:06:50.025+0000] {standard_task_runner.py:60} INFO - Started process 1539 to run task
+[2025-03-27T15:06:50.026+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_aqi_multiple_cities', 'fetch_aqi_all_cities', 'manual__2025-03-27T15:06:49.132461+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/fetch_multiple_cities.py', '--cfg-path', '/tmp/tmpt95_0jwy']
+[2025-03-27T15:06:50.028+0000] {standard_task_runner.py:88} INFO - Job 50: Subtask fetch_aqi_all_cities
+[2025-03-27T15:06:50.035+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-27T15:06:50.055+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_aqi_multiple_cities.fetch_aqi_all_cities manual__2025-03-27T15:06:49.132461+00:00 [running]> on host 75125d84c351
+[2025-03-27T15:06:50.086+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_aqi_multiple_cities' AIRFLOW_CTX_TASK_ID='fetch_aqi_all_cities' AIRFLOW_CTX_EXECUTION_DATE='2025-03-27T15:06:49.132461+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-27T15:06:49.132461+00:00'
+[2025-03-27T15:06:50.333+0000] {fetch_multiple_cities.py:60} WARNING - ❌ API error for Bangkok: 429
+[2025-03-27T15:06:52.552+0000] {fetch_multiple_cities.py:60} WARNING - ❌ API error for Chiang Mai: 429
+[2025-03-27T15:06:54.902+0000] {fetch_multiple_cities.py:60} WARNING - ❌ API error for Ratchaburi: 429
+[2025-03-27T15:06:57.211+0000] {fetch_multiple_cities.py:60} WARNING - ❌ API error for Rua Yai: 429
+[2025-03-27T15:06:59.441+0000] {fetch_multiple_cities.py:60} WARNING - ❌ API error for Mueang Nonthaburi: 429
+[2025-03-27T15:07:01.443+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-03-27T15:07:01.455+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=fetch_aqi_multiple_cities, task_id=fetch_aqi_all_cities, execution_date=20250327T150649, start_date=20250327T150650, end_date=20250327T150701
+[2025-03-27T15:07:01.484+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-03-27T15:07:01.495+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

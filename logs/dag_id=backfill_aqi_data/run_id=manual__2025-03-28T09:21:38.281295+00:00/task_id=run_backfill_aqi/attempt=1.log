@@ -1,0 +1,76 @@
+[2025-03-28T09:21:38.459+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: backfill_aqi_data.run_backfill_aqi manual__2025-03-28T09:21:38.281295+00:00 [queued]>
+[2025-03-28T09:21:38.464+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: backfill_aqi_data.run_backfill_aqi manual__2025-03-28T09:21:38.281295+00:00 [queued]>
+[2025-03-28T09:21:38.465+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-03-28T09:21:38.471+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_backfill_aqi> on 2025-03-28 09:21:38.281295+00:00
+[2025-03-28T09:21:38.474+0000] {standard_task_runner.py:60} INFO - Started process 230 to run task
+[2025-03-28T09:21:38.476+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'backfill_aqi_data', 'run_backfill_aqi', 'manual__2025-03-28T09:21:38.281295+00:00', '--job-id', '75', '--raw', '--subdir', 'DAGS_FOLDER/backfill_aqi_dag.py', '--cfg-path', '/tmp/tmpa5psrxyd']
+[2025-03-28T09:21:38.478+0000] {standard_task_runner.py:88} INFO - Job 75: Subtask run_backfill_aqi
+[2025-03-28T09:21:38.487+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-28T09:21:38.510+0000] {task_command.py:423} INFO - Running <TaskInstance: backfill_aqi_data.run_backfill_aqi manual__2025-03-28T09:21:38.281295+00:00 [running]> on host f5300fe43025
+[2025-03-28T09:21:38.556+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='backfill_aqi_data' AIRFLOW_CTX_TASK_ID='run_backfill_aqi' AIRFLOW_CTX_EXECUTION_DATE='2025-03-28T09:21:38.281295+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-28T09:21:38.281295+00:00'
+[2025-03-28T09:21:38.561+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-03-28T09:21:38.822+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Bangkok @ 2025-03-28 15:00:00+07:00 → AQI: 107
+[2025-03-28T09:21:44.067+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Chiang Mai @ 2025-03-28 15:00:00+07:00 → AQI: 166
+[2025-03-28T09:21:49.325+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Ratchaburi @ 2025-03-28 15:00:00+07:00 → AQI: 60
+[2025-03-28T09:21:54.562+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Rua Yai @ 2025-03-28 15:00:00+07:00 → AQI: 90
+[2025-03-28T09:21:59.809+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Mueang Nonthaburi @ 2025-03-28 15:00:00+07:00 → AQI: 103
+[2025-03-28T09:22:05.061+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:22:10.299+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:22:15.541+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:22:20.794+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:22:26.030+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:22:31.269+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:22:36.499+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:22:41.750+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Ratchaburi @ 2025-03-28 13:00:00+07:00 → AQI: 60
+[2025-03-28T09:22:46.986+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Rua Yai @ 2025-03-28 13:00:00+07:00 → AQI: 90
+[2025-03-28T09:22:52.228+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Mueang Nonthaburi @ 2025-03-28 13:00:00+07:00 → AQI: 103
+[2025-03-28T09:22:57.472+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Bangkok @ 2025-03-28 12:00:00+07:00 → AQI: 107
+[2025-03-28T09:23:02.724+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Chiang Mai @ 2025-03-28 12:00:00+07:00 → AQI: 166
+[2025-03-28T09:23:07.972+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:23:13.215+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:23:18.460+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:23:23.703+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:23:28.941+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:23:34.173+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:23:39.411+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:23:44.653+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Mueang Nonthaburi @ 2025-03-28 11:00:00+07:00 → AQI: 103
+[2025-03-28T09:23:49.889+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Bangkok @ 2025-03-28 10:00:00+07:00 → AQI: 107
+[2025-03-28T09:23:55.136+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Chiang Mai @ 2025-03-28 10:00:00+07:00 → AQI: 166
+[2025-03-28T09:24:00.377+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Ratchaburi @ 2025-03-28 10:00:00+07:00 → AQI: 60
+[2025-03-28T09:24:05.620+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Rua Yai @ 2025-03-28 10:00:00+07:00 → AQI: 90
+[2025-03-28T09:24:10.860+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:24:16.096+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:24:21.338+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:24:26.572+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:24:31.819+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:24:37.062+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:24:42.297+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:24:47.529+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Chiang Mai @ 2025-03-28 08:00:00+07:00
+[2025-03-28T09:24:52.774+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Ratchaburi @ 2025-03-28 08:00:00+07:00
+[2025-03-28T09:24:58.020+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Rua Yai @ 2025-03-28 08:00:00+07:00
+[2025-03-28T09:25:03.271+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Mueang Nonthaburi @ 2025-03-28 08:00:00+07:00
+[2025-03-28T09:25:08.503+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Bangkok @ 2025-03-28 07:00:00+07:00 → AQI: 107
+[2025-03-28T09:25:13.733+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:25:18.981+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:25:24.215+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:25:29.451+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:25:34.677+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:25:39.901+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:25:45.152+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:25:50.401+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Rua Yai @ 2025-03-28 06:00:00+07:00
+[2025-03-28T09:25:55.648+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Mueang Nonthaburi @ 2025-03-28 06:00:00+07:00
+[2025-03-28T09:26:00.893+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Bangkok @ 2025-03-28 05:00:00+07:00
+[2025-03-28T09:26:06.128+0000] {backfill_aqi_dag.py:65} INFO - ⏩ Skipped (already exists): Chiang Mai @ 2025-03-28 05:00:00+07:00
+[2025-03-28T09:26:11.366+0000] {backfill_aqi_dag.py:63} INFO - ✅ Inserted: Ratchaburi @ 2025-03-28 05:00:00+07:00 → AQI: 60
+[2025-03-28T09:26:16.606+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:26:21.847+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:26:27.075+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Bangkok
+[2025-03-28T09:26:32.321+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Chiang Mai
+[2025-03-28T09:26:37.555+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Ratchaburi
+[2025-03-28T09:26:42.801+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Rua Yai
+[2025-03-28T09:26:48.046+0000] {backfill_aqi_dag.py:67} WARNING - ❌ API error 429 for Mueang Nonthaburi
+[2025-03-28T09:26:53.054+0000] {backfill_aqi_dag.py:75} INFO - 🎉 Backfill completed.
+[2025-03-28T09:26:53.056+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-03-28T09:26:53.070+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=backfill_aqi_data, task_id=run_backfill_aqi, execution_date=20250328T092138, start_date=20250328T092138, end_date=20250328T092653
+[2025-03-28T09:26:53.126+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-03-28T09:26:53.141+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

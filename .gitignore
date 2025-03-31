@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.env
+.env.*
+
+# Airflow
+airflow.db
+airflow-webserver.pid
+logs/
+dags/__pycache__/
+dags/*/__pycache__/
+plugins/__pycache__/
+
+# Docker
+*.pid
+*.tar
+*.bak
+*.swp
+*.tmp
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Jupyter/Notebook (เผื่อมีใช้)
+.ipynb_checkpoints/
+
+# Requirements lock files
+poetry.lock
+Pipfile.lock
+
+# Others
+*.zip
+*.bak
