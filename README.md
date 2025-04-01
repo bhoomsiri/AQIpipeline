@@ -45,7 +45,6 @@ docker-compose up
 |----------------|-------------------------|
 | Airflow UI     | http://localhost:8080  |
 | Streamlit      | http://localhost:8501  |
-| pgAdmin (ถ้ามี)| http://localhost:5050  |
 
 ---
 
@@ -59,7 +58,8 @@ docker-compose up
 
 ## 📸 ตัวอย่าง Dashboard
 
-> *(แนะนำให้เพิ่ม screenshot ของหน้า dashboard ที่นี่)*
+> ![image](https://github.com/user-attachments/assets/8435ee89-73c6-475b-bbe7-df2047c28c87)
+
 
 ---
 
