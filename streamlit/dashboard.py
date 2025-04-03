@@ -38,12 +38,12 @@ query_avg_daily = """
       DATE(timestamp_utc) AS date,
       AVG(aqi)::int AS avg_aqi
     FROM air_quality_data
-    WHERE timestamp_utc >= CURRENT_DATE - INTERVAL '14 days'
+    WHERE timestamp_utc >= CURRENT_DATE - INTERVAL '7 days'
     GROUP BY date
     ORDER BY date;
 """
 df_avg_daily = pd.read_sql(query_avg_daily, conn)
-st.subheader("📊 ค่า AQI เฉลี่ยรายวัน (14 วันล่าสุด 5 จังหวัด)")
+st.subheader("📊 ค่า AQI เฉลี่ยรายวัน (7 วันล่าสุดทั้ง 5 จังหวัด)")
 st.line_chart(df_avg_daily.set_index("date"))
 
 # --- Top AQI of this week ---
